@@ -1,0 +1,231 @@
+/*
+  Figma footer: 1440 × 596, navy.
+  social icons @47px from top → columns @139px → divider @444px → legal text → 88px bottom.
+  Columns start at x87 (logo), 377, 630, 944 → grid 290 : 253 : 314 : 439.
+*/
+.footer {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding-block: 47px 88px;
+}
+
+.inner {
+  padding-inline: clamp(24px, 6.04vw, 87px) clamp(24px, 3.96vw, 57px);
+}
+
+/* ---------- Social icons (40px circles, 20px gap, right aligned) ---------- */
+.social {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.socialLink {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+
+.socialLink:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.socialLink img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Columns ---------- */
+.column,
+.contact {
+  min-width: 0;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 290fr 253fr 314fr 439fr;
+  margin-top: 52px;
+}
+
+.brand {
+  padding-top: 72px;
+}
+
+.brand a {
+  display: inline-block;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.links {
+  margin-top: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.link {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 21px;
+  opacity: 0.95;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.link:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Contact ---------- */
+.contactHeading {
+  padding-left: 24px; /* Figma: heading sits 24px right of the icon column */
+}
+
+.contactList {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.contactIcon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+}
+
+.contactIcon img {
+  flex: none;
+  max-width: none;
+  height: auto;
+}
+
+.contactText {
+  font-size: 15px;
+  line-height: 18px;
+  overflow-wrap: anywhere;
+}
+
+.contactItem:hover .contactText {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.addressLine {
+  display: block;
+  line-height: 27px; /* Figma: address lines are 27px apart */
+}
+
+/* ---------- Legal bar ---------- */
+.legal {
+  margin-top: 76px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-white);
+}
+
+.legalText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 11px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: center;
+}
+
+.separator {
+  width: 3px;
+  height: 28px;
+  background: var(--color-white);
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1099px) {
+  .footer {
+    padding-bottom: 56px;
+  }
+
+  .columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 32px;
+    margin-top: 40px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    padding-top: 0;
+  }
+
+  .contactHeading {
+    padding-left: 0;
+  }
+
+  .legal {
+    margin-top: 56px;
+  }
+
+  .legalText {
+    font-size: 20px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 639px) {
+  .footer {
+    padding-block: 40px 40px;
+  }
+
+  .social {
+    justify-content: flex-start;
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .heading {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .links {
+    margin-top: 8px;
+    gap: 12px;
+  }
+
+  .legal {
+    margin-top: 40px;
+    padding-top: 24px;
+  }
+
+  .legalText {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .separator {
+    display: none;
+  }
+}

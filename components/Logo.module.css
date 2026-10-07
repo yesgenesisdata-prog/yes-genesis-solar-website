@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  width: var(--logo-width, 190px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}

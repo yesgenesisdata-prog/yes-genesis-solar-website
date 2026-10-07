@@ -1,0 +1,654 @@
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #131f45;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+  width: 1200px;
+  max-width: calc(100% - 80px);
+  margin: 0 auto;
+  padding: 70px 0 100px;
+
+  display: grid;
+  grid-template-columns: 586px 1fr;
+  column-gap: 100px;
+  align-items: center;
+}
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.backButton {
+  position: absolute;
+  top: 50px;
+  left: -55px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #131f45;
+  font-size: 32px;
+  line-height: 1;
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.backButton:hover {
+  transform: translateX(-4px);
+}
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.imageColumn {
+  width: 100%;
+}
+
+.mainImageBox {
+  width: 586px;
+  height: 648px;
+
+  overflow: hidden;
+
+  border: 1px solid #16163f;
+  border-radius: 10px;
+
+  background: #ffffff;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   THUMBNAILS
+======================================== */
+
+.thumbnails {
+  display: flex;
+  gap: 16px;
+
+  margin-top: 18px;
+}
+
+.thumbnail {
+  width: 179px;
+  height: 166px;
+
+  overflow: hidden;
+
+  border: 1px solid #16163f;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.activeThumbnail {
+  border: 2px solid #131f45;
+}
+
+/* ========================================
+   DETAILS
+======================================== */
+
+.details {
+  padding-top: 10px;
+}
+
+.category {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #68728a;
+
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.details h1 {
+  margin: 0 0 26px;
+
+  color: #131f45;
+
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.shortDescription {
+  max-width: 500px;
+
+  margin: 0 0 38px;
+
+  color: #555f75;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   SIZE
+======================================== */
+
+.optionSection {
+  margin-bottom: 30px;
+}
+
+.optionSection h2 {
+  margin: 0 0 18px;
+
+  color: #131f45;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.sizeOptions {
+  display: flex;
+  gap: 18px;
+}
+
+.sizeButton {
+  width: 78px;
+  height: 66px;
+
+  border: 1px solid #131f45;
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  color: #131f45;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.sizeButton:hover {
+  background: #eef1f8;
+}
+
+.selectedSize {
+  background: #131f45;
+  color: #ffffff;
+}
+
+/* ========================================
+   INFO
+======================================== */
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+
+  margin-bottom: 18px;
+
+  font-size: 17px;
+}
+
+.infoLabel {
+  width: 100px;
+
+  color: #131f45;
+
+  font-weight: 600;
+}
+
+.infoValue {
+  color: #555f75;
+
+  font-weight: 400;
+}
+
+/* ========================================
+   ENQUIRE BUTTON
+======================================== */
+
+.enquireButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 190px;
+  height: 52px;
+
+  margin-top: 20px;
+
+  border-radius: 6px;
+
+  background: #131f45;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.enquireButton:hover {
+  background: #0b1433;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   COMMON SECTION
+======================================== */
+
+.aboutSection,
+.benefitsSection {
+  width: 1200px;
+  max-width: calc(100% - 80px);
+
+  margin: 0 auto;
+
+  padding: 90px 0;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 45px;
+}
+
+.sectionHeading span {
+  color: #68728a;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+
+  color: #131f45;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: stretch;
+}
+
+.aboutGrid > div:first-child {
+  color: #555f75;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.aboutGrid p {
+  margin: 0 0 24px;
+}
+
+.aboutCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 45px;
+
+  border: 1px solid #d9ddea;
+  border-radius: 10px;
+
+  background: #f7f8fb;
+}
+
+.aboutCard span {
+  margin-bottom: 14px;
+
+  color: #68728a;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aboutCard strong {
+  margin-bottom: 16px;
+
+  color: #131f45;
+
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.aboutCard p {
+  margin: 0;
+
+  color: #555f75;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   BENEFITS
+======================================== */
+
+.benefitsSection {
+  border-top: 1px solid #e1e4eb;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.benefitCard {
+  min-height: 220px;
+
+  padding: 30px;
+
+  border: 1px solid #d9ddea;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 12px 30px rgba(19, 31, 69, 0.08);
+}
+
+.benefitNumber {
+  margin-bottom: 30px;
+
+  color: #68728a;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.benefitCard h3 {
+  margin: 0 0 12px;
+
+  color: #131f45;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.benefitCard p {
+  margin: 0;
+
+  color: #68728a;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   CTA
+======================================== */
+
+.ctaSection {
+  width: 1200px;
+  max-width: calc(100% - 80px);
+
+  margin: 0 auto 80px;
+
+  padding: 55px 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+
+  border-radius: 12px;
+
+  background: #131f45;
+}
+
+.ctaSection span {
+  color: #aeb7ce;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+.ctaSection h2 {
+  max-width: 650px;
+
+  margin: 12px 0;
+
+  color: #ffffff;
+
+  font-size: 32px;
+  line-height: 1.25;
+}
+
+.ctaSection p {
+  margin: 0;
+
+  color: #cbd1df;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 160px;
+  height: 52px;
+
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #131f45;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .mainImageBox {
+    width: 100%;
+    max-width: 586px;
+    margin: 0 auto;
+  }
+
+  .details {
+    max-width: 586px;
+    margin: 0 auto;
+  }
+
+  .backButton {
+    left: 0;
+  }
+
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .hero {
+    width: auto;
+    max-width: calc(100% - 40px);
+
+    padding: 50px 0 60px;
+
+    gap: 40px;
+  }
+
+  .backButton {
+    position: static;
+
+    width: 35px;
+    height: 35px;
+
+    margin-bottom: 10px;
+  }
+
+  .mainImageBox {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .thumbnails {
+    gap: 8px;
+  }
+
+  .thumbnail {
+    width: calc((100% - 16px) / 3);
+    height: auto;
+    aspect-ratio: 1 / 0.9;
+  }
+
+  .details h1 {
+    font-size: 28px;
+  }
+
+  .shortDescription {
+    font-size: 14px;
+  }
+
+  .sizeOptions {
+    gap: 10px;
+  }
+
+  .sizeButton {
+    width: 65px;
+    height: 58px;
+  }
+
+  .aboutSection,
+  .benefitsSection {
+    width: auto;
+    max-width: calc(100% - 40px);
+
+    padding: 60px 0;
+  }
+
+  .sectionHeading h2 {
+    font-size: 25px;
+  }
+
+  .aboutGrid {
+    gap: 30px;
+  }
+
+  .aboutCard {
+    padding: 30px;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaSection {
+    width: auto;
+    max-width: calc(100% - 40px);
+
+    margin-bottom: 50px;
+
+    padding: 35px 25px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ctaSection h2 {
+    font-size: 26px;
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}

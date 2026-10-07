@@ -1,0 +1,18 @@
+{
+  "_note": "Figma asset URLs expire ~7 days after generation. If a download fails with 403/404, re-export the image from Figma into public/assets/images using the same filename.",
+  "images": {
+    "hero.png": "https://www.figma.com/api/mcp/asset/c1bf6a4e-bf4b-4be7-9c69-906fa7af2e3e.png",
+    "logo.png": "https://www.figma.com/api/mcp/asset/2fa9a6bf-9106-4be8-9d32-d83d7ae45775.png",
+    "category-solar-energy.png": "https://www.figma.com/api/mcp/asset/93af79e3-9378-4a5d-ab9d-26541d6db7b3.png",
+    "category-wind-energy.png": "https://www.figma.com/api/mcp/asset/3a9f43fb-44f2-4acd-a239-363af3c6b0b5.png",
+    "category-vertical-wind.png": "https://www.figma.com/api/mcp/asset/ff3db61c-deb1-470d-a4d1-db80b6cf7e88.png",
+    "product-solar-light.png": "https://www.figma.com/api/mcp/asset/9c992e05-9f82-426d-be38-4bbfba6735d4.png",
+    "product-solar-battery.png": "https://www.figma.com/api/mcp/asset/4b4e71a9-ffdc-430d-bca6-05ed04d7e029.png",
+    "product-solar-pumpset.png": "https://www.figma.com/api/mcp/asset/78e0c699-8d93-4e89-a468-375c9fa6f201.png",
+    "product-solar-panel.png": "https://www.figma.com/api/mcp/asset/08908feb-490d-47b1-876f-7966f77b6620.png",
+    "product-solar-structure.png": "https://www.figma.com/api/mcp/asset/0d18cb01-4d0c-4790-bc62-be2cf72ca795.png",
+    "product-solar-inverter.png": "https://www.figma.com/api/mcp/asset/f26d5889-a6b1-40ad-9284-810bccc043ee.png",
+    "product-solar-vfd.png": "https://www.figma.com/api/mcp/asset/0cc5c841-6c19-4498-91f8-3ec48f43f41d.png",
+    "product-solar-fencing.png": "https://www.figma.com/api/mcp/asset/04a65c38-967c-477a-a484-316c6e90591e.png"
+  }
+}

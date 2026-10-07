@@ -1,0 +1,1390 @@
+/* =========================================================
+   YES GENESIS — SOLAR SUBSIDY PAGE
+   ========================================================= */
+
+.page {
+  background: #ffffff;
+  color: #131f45;
+  overflow: hidden;
+}
+
+.container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 612px;
+  background: #131f45;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  right: -180px;
+  top: -220px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.13);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.hero .container {
+  min-height: 612px;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 70px 0;
+}
+
+.eyebrow,
+.sectionTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #f97316;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.hero h1 {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: clamp(52px, 5vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: #f97316;
+}
+
+.heroContent > p {
+  max-width: 620px;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.heroActions {
+  display: flex;
+  gap: 14px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton,
+.ctaButton,
+.resultButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primaryButton {
+  background: #f97316;
+  color: #ffffff;
+}
+
+.primaryButton:hover,
+.ctaButton:hover,
+.resultButton:hover {
+  transform: translateY(-2px);
+  background: #ea580c;
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.heroStats {
+  display: flex;
+  gap: 40px;
+  margin-top: 55px;
+  flex-wrap: wrap;
+}
+
+.heroStats div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.heroStats strong {
+  color: #ffffff;
+  font-size: 23px;
+}
+
+.heroStats span {
+  max-width: 150px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.heroVisual {
+  position: relative;
+  height: 500px;
+}
+
+.sunCircle {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: 40px;
+  right: 40px;
+  border-radius: 50%;
+  background: #f97316;
+  opacity: 0.9;
+  box-shadow: 0 0 80px rgba(249, 115, 22, 0.35);
+}
+
+.solarHouse {
+  position: absolute;
+  width: 380px;
+  height: 330px;
+  left: 50%;
+  bottom: 55px;
+  transform: translateX(-50%);
+}
+
+.roof {
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  width: 340px;
+  height: 170px;
+  transform: skewY(-18deg);
+  background: #1d376d;
+  border: 8px solid #0e1733;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.panelGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 100%;
+}
+
+.panelGrid span {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    135deg,
+    #244d91,
+    #132b5c
+  );
+}
+
+.houseBody {
+  position: absolute;
+  left: 70px;
+  bottom: 0;
+  width: 250px;
+  height: 190px;
+  border-radius: 4px;
+  background: #f2f5fa;
+}
+
+.window {
+  position: absolute;
+  left: 35px;
+  top: 55px;
+  width: 65px;
+  height: 65px;
+  border: 6px solid #131f45;
+  background: #76b7d7;
+}
+
+.door {
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+  width: 65px;
+  height: 120px;
+  background: #131f45;
+}
+
+.energyCard {
+  position: absolute;
+  right: -15px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+}
+
+.energyCard svg {
+  flex: none;
+  color: #f97316;
+}
+
+.energyCard div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.energyCard strong {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.energyCard span {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+}
+
+/* =========================================================
+   COMMON SECTIONS
+   ========================================================= */
+
+.intro,
+.centralSection,
+.statesSection,
+.processSection,
+.faqSection {
+  padding: 110px 0;
+}
+
+.sectionHeading {
+  max-width: 720px;
+  margin-bottom: 55px;
+}
+
+.sectionHeading > span {
+  display: block;
+  margin-bottom: 12px;
+  color: #f97316;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #131f45;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.sectionHeading p {
+  margin-top: 20px;
+  color: #697286;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.infoCard {
+  padding: 32px;
+  border: 1px solid #e8ebf1;
+  border-radius: 18px;
+  background: #ffffff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(19, 31, 69, 0.08);
+}
+
+.iconBox {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #fff2e9;
+  color: #f97316;
+}
+
+.infoCard h3 {
+  margin-top: 24px;
+  color: #131f45;
+  font-size: 20px;
+}
+
+.infoCard p {
+  margin-top: 10px;
+  color: #70798c;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   CENTRAL SUBSIDY
+   ========================================================= */
+
+.centralSection {
+  background: #f6f8fb;
+}
+
+.subsidyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.subsidyCard {
+  position: relative;
+  min-height: 270px;
+  padding: 35px;
+  border-radius: 20px;
+  background: #131f45;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.subsidyCard::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.15);
+}
+
+.cardNumber {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.capacity {
+  margin-top: 45px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 16px;
+}
+
+.subsidyAmount {
+  margin-top: 6px;
+  color: #f97316;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.subsidyCard p {
+  position: relative;
+  z-index: 2;
+  max-width: 280px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #697286;
+}
+
+.note svg {
+  flex: none;
+  color: #f97316;
+}
+
+.note p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   QUICK SOLAR ESTIMATOR
+   ========================================================= */
+
+.calculatorSection {
+  padding: 110px 0;
+  background: #131f45;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+}
+
+/* LEFT */
+
+.calculatorLeft {
+  padding: 60px;
+  background: #ffffff;
+}
+
+.calculatorLeft h2 {
+  margin-top: 18px;
+  color: #131f45;
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.calculatorLeft p {
+  max-width: 520px;
+  margin-top: 20px;
+  color: #697286;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.calculatorLeft label {
+  display: block;
+  margin-top: 42px;
+  margin-bottom: 10px;
+  color: #131f45;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+/* INPUT */
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  height: 64px;
+  border: 1.5px solid #dfe4ed;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+  border-color: #f97316;
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.08);
+}
+
+.inputWrapper input {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  border: 0;
+  outline: 0;
+  color: #131f45;
+  background: transparent;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.inputWrapper input::-webkit-inner-spin-button,
+.inputWrapper input::-webkit-outer-spin-button {
+  margin: 0;
+}
+
+.inputWrapper span {
+  flex: none;
+  padding-right: 20px;
+  color: #7b8495;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* RANGE */
+
+.range {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: 5px;
+  margin-top: 18px;
+  accent-color: #f97316;
+  cursor: pointer;
+}
+
+.range:focus {
+  outline: none;
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 520px;
+  margin-top: 22px;
+  color: #9098a7;
+  font-size: 11px;
+}
+
+.rangeLabels strong {
+  color: #f97316;
+  font-size: 12px;
+}
+
+/* HINT */
+
+.estimatorHint {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 520px;
+  margin-top: 35px;
+  padding: 15px 16px;
+  border-radius: 12px;
+  background: #fff5ee;
+  color: #6c7180;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.estimatorHint svg {
+  flex: none;
+  color: #f97316;
+}
+
+/* RIGHT RESULT */
+
+.calculatorResult {
+  padding: 55px;
+  background: #f6f8fb;
+}
+
+.resultLabel {
+  display: block;
+  color: #f97316;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+}
+
+/* CAPACITY */
+
+.capacityResult {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.capacityResult small {
+  display: block;
+  color: #7b8495;
+  font-size: 13px;
+}
+
+.capacityResult strong {
+  display: block;
+  margin-top: 5px;
+  color: #131f45;
+  font-size: 58px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.capacityIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: #fff2e9;
+  color: #f97316;
+}
+
+/* COVERAGE */
+
+.coverageBar {
+  width: 100%;
+  height: 8px;
+  margin-top: 32px;
+  border-radius: 999px;
+  background: #e2e6ed;
+  overflow: hidden;
+}
+
+.coverageBar div {
+  height: 100%;
+  min-width: 2px;
+  border-radius: inherit;
+  background: #f97316;
+  transition: width 0.35s ease;
+}
+
+.coverageText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.coverageText span {
+  color: #7b8495;
+  font-size: 12px;
+}
+
+.coverageText strong {
+  color: #131f45;
+  font-size: 13px;
+}
+
+/* RESULT CARDS */
+
+.resultGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.resultBox {
+  padding: 18px;
+  border: 1px solid #e1e5ec;
+  border-radius: 13px;
+  background: #ffffff;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.resultBox:hover {
+  transform: translateY(-2px);
+  border-color: #f97316;
+  box-shadow: 0 8px 20px rgba(19, 31, 69, 0.06);
+}
+
+.resultBox span {
+  display: block;
+  color: #7b8495;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.resultBox strong {
+  display: block;
+  margin-top: 7px;
+  color: #131f45;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+/* CTA */
+
+.resultButton {
+  width: 100%;
+  margin-top: 20px;
+  background: #f97316;
+  color: #ffffff;
+}
+
+.resultButton:hover {
+  background: #ea580c;
+}
+
+/* DISCLAIMER */
+
+.calculatorDisclaimer {
+  display: block;
+  margin-top: 15px;
+  color: #8a92a1;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   STATES
+   ========================================================= */
+
+.statesSection {
+  background: #ffffff;
+}
+
+.statesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.stateCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 25px;
+  border: 1px solid #e7eaf0;
+  border-radius: 16px;
+  background: #ffffff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.stateCard:hover {
+  transform: translateY(-3px);
+  border-color: #f97316;
+  box-shadow: 0 14px 35px rgba(19, 31, 69, 0.07);
+}
+
+.stateIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fff2e9;
+  color: #f97316;
+}
+
+.stateInfo h3 {
+  margin: 0;
+  color: #131f45;
+  font-size: 17px;
+}
+
+.stateInfo strong {
+  display: block;
+  margin-top: 5px;
+  color: #f97316;
+  font-size: 20px;
+}
+
+.stateInfo p {
+  margin-top: 6px;
+  color: #7b8495;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ELIGIBILITY
+   ========================================================= */
+
+.eligibilitySection {
+  padding: 110px 0;
+  background: #f6f8fb;
+}
+
+.eligibilityGrid {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.eligibilityGrid h2 {
+  margin-top: 18px;
+  color: #131f45;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.eligibilityIntro {
+  max-width: 650px;
+  margin-top: 18px;
+  color: #697286;
+  line-height: 1.7;
+}
+
+.checkList {
+  display: grid;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.checkList div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.checkList svg {
+  flex: none;
+  color: #f97316;
+}
+
+.checkList span {
+  color: #414b5d;
+  line-height: 1.5;
+}
+
+.eligibilityCard {
+  padding: 45px;
+  border-radius: 22px;
+  background: #131f45;
+  color: #ffffff;
+}
+
+.eligibilityCard > svg {
+  color: #f97316;
+}
+
+.eligibilityCard h3 {
+  margin-top: 25px;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.eligibilityCard p {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+}
+
+.eligibilityCard .primaryButton {
+  margin-top: 28px;
+}
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.processSection {
+  background: #ffffff;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.processItem {
+  padding: 28px 22px;
+  border-top: 3px solid #f97316;
+}
+
+.processItem > span {
+  color: #f97316;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.processItem h3 {
+  margin-top: 22px;
+  color: #131f45;
+  font-size: 18px;
+}
+
+.processItem p {
+  margin-top: 10px;
+  color: #7b8495;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faqSection {
+  background: #f6f8fb;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 90px;
+}
+
+.faqList {
+  display: grid;
+  gap: 10px;
+}
+
+.faqItem {
+  border: 1px solid #e2e6ed;
+  border-radius: 13px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.faqItem button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 22px;
+  border: 0;
+  background: transparent;
+  color: #131f45;
+  text-align: left;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faqItem button:hover {
+  background: #fafbfc;
+}
+
+.chevron {
+  flex: none;
+  transition: transform 0.2s ease;
+}
+
+.faqOpen .chevron {
+  transform: rotate(180deg);
+}
+
+.answer {
+  padding: 0 22px 22px;
+}
+
+.answer p {
+  margin: 0;
+  color: #70798c;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.finalCta {
+  padding: 70px 0;
+  background: #f97316;
+  color: #ffffff;
+}
+
+.finalCta .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.finalCta span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.finalCta h2 {
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+.finalCta p {
+  max-width: 650px;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+}
+
+.ctaButton {
+  flex: none;
+  background: #131f45;
+  color: #ffffff;
+}
+
+.ctaButton:hover {
+  background: #0d1633;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .hero .container {
+    grid-template-columns: 1fr 0.7fr;
+    gap: 25px;
+  }
+
+  .heroVisual {
+    transform: scale(0.85);
+  }
+
+  .calculator {
+    grid-template-columns: 1fr 0.85fr;
+  }
+
+  .calculatorLeft {
+    padding: 45px;
+  }
+
+  .calculatorResult {
+    padding: 45px;
+  }
+
+  .eligibilityGrid {
+    gap: 50px;
+  }
+
+  .processGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .hero .container,
+  .calculator,
+  .eligibilityGrid,
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroVisual {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero .container {
+    min-height: auto;
+  }
+
+  .heroContent {
+    padding: 90px 0;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculatorLeft {
+    padding: 50px;
+  }
+
+  .calculatorResult {
+    padding: 50px;
+  }
+
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faqGrid {
+    gap: 30px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 32px, 1200px);
+  }
+
+  .intro,
+  .centralSection,
+  .statesSection,
+  .processSection,
+  .faqSection,
+  .eligibilitySection,
+  .calculatorSection {
+    padding: 75px 0;
+  }
+
+  /* HERO */
+
+  .heroContent {
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+    letter-spacing: -2px;
+  }
+
+  .heroContent > p {
+    font-size: 16px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .heroStats {
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .heroStats strong {
+    font-size: 20px;
+  }
+
+  /* SECTIONS */
+
+  .sectionHeading {
+    margin-bottom: 38px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 36px;
+  }
+
+  .sectionHeading p {
+    font-size: 15px;
+  }
+
+  /* SUBSIDY */
+
+  .subsidyGrid,
+  .statesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .subsidyAmount {
+    font-size: 36px;
+  }
+
+  /* CALCULATOR */
+
+  .calculatorLeft {
+    padding: 32px 24px;
+  }
+
+  .calculatorResult {
+    padding: 32px 24px;
+  }
+
+  .calculatorLeft h2 {
+    font-size: 34px;
+  }
+
+  .calculatorLeft p {
+    font-size: 15px;
+  }
+
+  .calculatorLeft label {
+    margin-top: 32px;
+  }
+
+  .inputWrapper {
+    height: 58px;
+  }
+
+  .inputWrapper input {
+    padding: 0 16px;
+    font-size: 21px;
+  }
+
+  .inputWrapper span {
+    padding-right: 16px;
+    font-size: 11px;
+  }
+
+  .rangeLabels {
+    margin-top: 17px;
+  }
+
+  .estimatorHint {
+    margin-top: 25px;
+  }
+
+  .capacityResult strong {
+    font-size: 48px;
+  }
+
+  .capacityIcon {
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+  }
+
+  .resultGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .resultBox {
+    padding: 15px;
+  }
+
+  .resultBox strong {
+    font-size: 15px;
+  }
+
+  .resultBox span {
+    font-size: 10px;
+  }
+
+  .calculatorDisclaimer {
+    font-size: 9.5px;
+  }
+
+  /* STATES */
+
+  .stateCard {
+    padding: 20px;
+  }
+
+  /* ELIGIBILITY */
+
+  .eligibilityGrid h2 {
+    font-size: 38px;
+  }
+
+  .eligibilityCard {
+    padding: 32px 25px;
+  }
+
+  /* PROCESS */
+
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FAQ */
+
+  .faqGrid {
+    gap: 20px;
+  }
+
+  .faqItem button {
+    padding: 19px;
+    font-size: 14px;
+  }
+
+  .answer {
+    padding: 0 19px 19px;
+  }
+
+  /* CTA */
+
+  .finalCta .container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .finalCta h2 {
+    font-size: 34px;
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .heroStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 15px;
+  }
+
+  .heroStats span {
+    max-width: 130px;
+  }
+
+  .calculatorLeft,
+  .calculatorResult {
+    padding: 28px 18px;
+  }
+
+  .calculatorLeft h2 {
+    font-size: 30px;
+  }
+
+  .capacityResult strong {
+    font-size: 43px;
+  }
+
+  .resultGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .resultBox {
+    padding: 16px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 32px;
+  }
+}

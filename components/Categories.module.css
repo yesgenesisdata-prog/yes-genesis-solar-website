@@ -1,0 +1,26 @@
+/* Figma: cards start 171px below the hero (y958 − 787) */
+.section {
+  padding-top: clamp(40px, 11.875vw, 171px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 767px) {
+  .grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 599px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+.grid li {
+  will-change: transform;
+}
