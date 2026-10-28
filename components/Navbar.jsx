@@ -1,93 +1,133 @@
-'use client';
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
-import Logo from './Logo';
-import { NAV_LINKS, CONTACT_HREF } from '@/data/site';
-import styles from './Navbar.module.css';
+"use client";
 
-const isActive = (pathname, href) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import Logo from "./Logo";
+import { NAV_LINKS, CONTACT_HREF } from "@/data/site";
+import styles from "./Navbar.module.css";
+
+const isActive = (pathname, href) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Close the drawer on navigation and on Escape.
-  useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
-    if (!open) return undefined;
-    const onKeyDown = (e) => e.key === 'Escape' && setOpen(false);
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, [open]);
 
-  const close = () => setOpen(false);
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const closeMenu = () => setOpen(false);
 
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
-        <Link href="/" className={styles.brand} onClick={close}>
+        <Link
+          href="/"
+          className={styles.brand}
+          aria-label="YES Genesis home"
+          onClick={closeMenu}
+        >
           <Logo priority />
         </Link>
 
-        <nav className={styles.pill} aria-label="Primary">
-          <ul className={styles.pillList}>
-            {NAV_LINKS.map(({ label, href }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className={styles.link}
-                  aria-current={isActive(pathname, href) ? 'page' : undefined}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+        <nav className={styles.desktopNav} aria-label="Main navigation">
+          <ul className={styles.navList}>
+            {NAV_LINKS.map(({ label, href }) => {
+              const active = isActive(pathname, href);
+
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`${styles.navLink} ${
+                      active ? styles.active : ""
+                    }`}
+                    aria-current={active ? "page" : undefined}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
-        <Link href={CONTACT_HREF} className={`${styles.glass} ${styles.contact}`}>
-          CONTACT
+        <Link href={CONTACT_HREF} className={styles.contactButton}>
+          <span>Contact Us</span>
+          <ArrowUpRight size={18} strokeWidth={2.2} />
         </Link>
 
         <button
           type="button"
-          className={styles.toggle}
+          className={styles.menuButton}
           aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((v) => !v)}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          onClick={() => setOpen((previous) => !previous)}
         >
-          {open ? <X size={26} aria-hidden="true" /> : <Menu size={26} aria-hidden="true" />}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      <div id="mobile-menu" className={styles.drawer} data-open={open} aria-hidden={!open}>
-        <nav className={styles.drawerInner} aria-label="Mobile">
-          <ul>
-            {NAV_LINKS.map(({ label, href }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className={styles.drawerLink}
-                  aria-current={isActive(pathname, href) ? 'page' : undefined}
-                  tabIndex={open ? 0 : -1}
-                  onClick={close}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      <div
+        id="mobile-navigation"
+        className={`${styles.mobilePanel} ${
+          open ? styles.mobilePanelOpen : ""
+        }`}
+        aria-hidden={!open}
+      >
+        <nav className={styles.mobileNav} aria-label="Mobile navigation">
+          {NAV_LINKS.map(({ label, href }) => {
+            const active = isActive(pathname, href);
+
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`${styles.mobileLink} ${
+                  active ? styles.mobileLinkActive : ""
+                }`}
+                aria-current={active ? "page" : undefined}
+                tabIndex={open ? 0 : -1}
+                onClick={closeMenu}
+              >
+                {label}
+                <ArrowUpRight size={17} />
+              </Link>
+            );
+          })}
+
           <Link
             href={CONTACT_HREF}
-            className={`${styles.glass} ${styles.drawerContact}`}
+            className={styles.mobileContact}
             tabIndex={open ? 0 : -1}
-            onClick={close}
+            onClick={closeMenu}
           >
-            CONTACT
+            Contact Us
+            <ArrowUpRight size={18} />
           </Link>
         </nav>
       </div>

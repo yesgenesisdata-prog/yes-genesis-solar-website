@@ -72,9 +72,16 @@ export default function Footer() {
         </ul>
 
         <div className={styles.columns}>
-          <div className={styles.brand}>
-            <Link href="/">
-              <Logo />
+                    <div className={styles.brand}>
+            <Link href="/" aria-label="Y.G Solar home">
+              <Image
+                src="/assets/images/footer-logo.png"
+                alt="Y.G Solar"
+                width={220}
+                height={80}
+                priority={false}
+                className={styles.footerLogo}
+              />
             </Link>
           </div>
 

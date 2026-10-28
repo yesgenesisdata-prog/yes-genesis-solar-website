@@ -5,8 +5,8 @@ import styles from './CategoryCard.module.css';
 export default function CategoryCard({ category }) {
   const { slug, title, count, image, alt, objectPosition } = category;
 
-  return (
-    <Link href={`/categories/${slug}`} className={styles.card}>
+  const cardContent = (
+    <>
       <Image
         src={image}
         alt={alt}
@@ -19,6 +19,20 @@ export default function CategoryCard({ category }) {
         <h3 className={styles.title}>{title}</h3>
         {count && <p className={styles.count}>{count}</p>}
       </div>
-    </Link>
+    </>
+  );
+
+  if (slug === 'solar-energy') {
+    return (
+      <Link href={`/categories/${slug}`} className={styles.card}>
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return (
+    <div className={styles.card}>
+      {cardContent}
+    </div>
   );
 }

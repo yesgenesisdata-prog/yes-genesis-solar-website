@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from './ProductCard.module.css';
 
 export default function ProductCard({ product }) {
-  const { slug, title, image, alt, objectPosition } = product;
+  const { title, image, alt, objectPosition } = product;
 
   return (
-    <Link href={`/products/${slug}`} className={styles.item}>
+    <div className={styles.item}>
       <span className={styles.media}>
         <Image
           src={image}
@@ -18,6 +17,6 @@ export default function ProductCard({ product }) {
         />
       </span>
       <h3 className={styles.title}>{title}</h3>
-    </Link>
+    </div>
   );
 }

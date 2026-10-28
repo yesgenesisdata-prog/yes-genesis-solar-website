@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import PlaceholderPage from '@/components/PlaceholderPage';
 import { findPlaceholderPage, getPlaceholderPages } from '@/lib/routes';
 
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {

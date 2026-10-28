@@ -1,16 +1,11 @@
-/*
-  Figma: heading 77px below the category cards (y1535 − 1458), 39px above the grid.
-  Grid: 4 × 282 with 24px column gap; rows are 406px apart (336px item + 70px gap).
-  The design leaves ~597px of empty white space between the grid and the footer;
-  it is kept (and scaled down on small screens) via --section-end-space.
-  (602px here because Figma's 2nd row label sits 5px lower than the 1st row's.)
-*/
+
+/* Trending Products Section */
 .section {
-  --section-end-space: clamp(64px, 41.8vw, 602px);
   padding-top: clamp(40px, 5.35vw, 77px);
-  padding-bottom: var(--section-end-space);
+  padding-bottom: 32px;
 }
 
+/* Section Heading */
 .heading {
   margin-bottom: clamp(24px, 2.7vw, 39px);
   text-align: center;
@@ -19,13 +14,15 @@
   line-height: 1.11;
 }
 
+/* Products Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 24px;
   row-gap: 70px;
 }
 
+/* Tablets */
 @media (max-width: 1023px) {
   .grid {
     column-gap: 16px;
@@ -33,14 +30,20 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 767px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 32px;
   }
 }
 
+/* Small Mobile */
 @media (max-width: 479px) {
+  .section {
+    padding-bottom: 24px;
+  }
+
   .grid {
     column-gap: 12px;
     row-gap: 24px;
