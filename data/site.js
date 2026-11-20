@@ -1,8 +1,7 @@
 export const SITE = {
   name: 'YES Genesis',
   legalName: 'YES GENESIS FINTECH PRIVATE LIMITED',
-  description:
-    'YES Genesis Fintech Private Limited — explore solar and wind energy products including solar panels, batteries, inverters, pumpsets, VFDs, structures, lights and fencing.',
+  description: 'YES Genesis is a solar and renewable energy solutions provider in Hyderabad, offering solar panels, inverters, batteries, solar pumps, wind energy products and rooftop solar solutions.',
   phone: {
     display: '+91 9517889999',
     href: 'tel:+919517889999',

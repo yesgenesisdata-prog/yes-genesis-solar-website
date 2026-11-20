@@ -42,7 +42,7 @@ const states = [
   },
   {
     name: 'Assam',
-    amount: '₹15,000 – ₹45,000',
+    amount: '₹15,000 - ₹45,000',
     description: 'Additional support may vary by system capacity.',
   },
   {
@@ -77,12 +77,12 @@ const states = [
   },
   {
     name: 'Jammu & Kashmir',
-    amount: '₹15,000 – ₹45,000',
+    amount: '₹15,000 - ₹45,000',
     description: 'Support varies according to eligibility and scheme.',
   },
   {
     name: 'Bihar',
-    amount: 'Up to 60–80%',
+    amount: 'Up to 60-80%',
     description: 'Support may vary for eligible low-income households.',
   },
   {
@@ -494,6 +494,7 @@ export default function SubsidyPage() {
 
         <Link
           href="/#contact"
+          data-contact-trigger="true"
           className={styles.resultButton}
         >
           Get a Solar Quote
@@ -600,7 +601,7 @@ export default function SubsidyPage() {
                 can help you understand the next steps.
               </p>
 
-              <Link href="/#contact" className={styles.primaryButton}>
+              <Link href="/#contact" data-contact-trigger="true" className={styles.primaryButton}>
                 Talk to YES Genesis
                 <ArrowRight size={18} />
               </Link>
@@ -697,7 +698,7 @@ export default function SubsidyPage() {
             </p>
           </div>
 
-          <Link href="/#contact" className={styles.ctaButton}>
+          <Link href="/#contact" data-contact-trigger="true" className={styles.ctaButton}>
             Get Started
             <ArrowRight size={18} />
           </Link>

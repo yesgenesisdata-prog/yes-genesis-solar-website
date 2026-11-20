@@ -120,9 +120,8 @@ export default function Footer() {
 
       <div className={`container ${styles.legal}`}>
         <p className={styles.legalText}>
-          <span>{SITE.legalName}</span>
-          <span className={styles.separator} aria-hidden="true" />
-          <span>ALL RIGHTS RESERVED</span>
+          
+          
         </p>
       </div>
     </footer>

@@ -63,7 +63,8 @@ export default function ContactModal() {
         text === 'enquire now' ||
         text === 'enquiry' ||
         text === 'get in touch' ||
-        text === 'apply for solar loan';
+        text === 'apply for solar loan' ||
+text === 'get a solar quote';
 
       if (!isContactButton) return;
 
